@@ -1,0 +1,116 @@
+<div class="container">
+  <div class="card">
+    <div class="card-header">
+      Cadastro de Estagiário
+    </div>
+    <div class="card-body">
+      <form [formGroup]="formulario"
+           (ngSubmit)="onSubmit()">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-4">
+              <div class="form-group">
+                <label for="matriculaInput">Matrícula</label>
+                <input type="text"
+                       class="form-control"
+                       id="matriculaInput"
+                       placeholder="Matrícula"
+                       formControlName="matricula">
+              </div>
+            </div>
+            <div class="col-sm-8">
+              <div class="form-group">
+                <label for="nomeCompletoInput">Nome Completo</label>
+                <input type="text"
+                       class="form-control"
+                       id="nomeCompletoInput"
+                       placeholder="Nome Completo"
+                       formControlName="nomeCompleto">
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-3">
+              <div class="form-group">
+                <label for="telefoneInput">Telefone</label>
+                <input type="text"
+                       class="form-control"
+                       id="telefoneInput"
+                       placeholder="(xx) - xxxx - xxxx"
+                       formControlName="telefone">
+
+              </div>
+            </div>
+            <div class="col-sm-3">
+              <div class="form-group">
+                <label for="celular">Celular/Whatsapp</label>
+                <input type="text"
+                       class="form-control"
+                       id="celular"
+                       formControlName="celular">
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="form-group">
+                <label for="email">E-mail</label>
+                <input type="text"
+                       class="form-control"
+                       id="email"
+                       formControlName="email">
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-4">
+              <div class="form-group">
+                <label for="turno">Turno</label>
+                <select (change)="setTurno($event)"
+                        id="turno"
+                        class="form-control"
+                        formControlName="turno">
+                <option value="MATUTINO">MATUTINO</option>
+                <option value="VESPERTINO">VESPERTINO</option>
+                <option value="NOTURNO">NOTURNO</option>
+              </select>
+              </div>
+            </div>
+            <div class="col-sm-2">
+              <div class="form-group">
+                <label for="periodo">Período</label>
+                <input type="text"
+                       (keyup)="setPeriodo($event)"
+                       class="form-control"
+                       id="periodo"
+                       formControlName="periodo">
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="form-group">
+                <label for="tipo-estagio">Tipo de Estágio</label>
+                <select (change)="setTipoEstagio($event)"
+                        name=""
+                        id="tipo-estagio"
+                        class="form-control"
+                        formControlName="tipoEstagio">
+                <option value=""></option>
+                <option value="OBRIGATORIO">OBRIGATÓRIO</option>
+                <option value="NAO_OBRIGATORIO">NÃO OBRIGATÓRIO</option>
+              </select>
+              </div>
+            </div>
+          </div>
+          <div class="row ">
+            <div class="col-sm-4 offset-sm-8">
+              <button type="button"
+                      class="btn btn-primary">Editar</button>
+              <button type="submit"
+                      class="btn btn-success" [disabled]="!formulario.valid" >Salvar</button>
+              <button type="button"
+                      class="btn btn-danger">Cancelar</button>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

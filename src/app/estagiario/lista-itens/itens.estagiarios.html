@@ -1,0 +1,52 @@
+<ul class="nav nav-tabs">
+    <li class="nav-item">
+      <a  
+      class="nav-link" 
+      [class.active]="monitorLink === 'cadastro'" 
+      (click)="monitorLink = 'cadastro'"
+      href="#">
+          CADASTRO
+      </a> 
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" 
+      [class.active]="monitorLink === 'lista'"
+      (click)="monitorLink = 'lista'"
+      href="#">
+        LISTA
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link"
+      [class.active]="monitorLink === 'horario'"
+      (click)="monitorLink = 'horario'"
+      href="#"
+      >
+      CADASTRO DE HORÁRIO
+    </a>
+    </li>
+  </ul>
+  <div [ngSwitch] = "monitorLink">
+    <div *ngSwitchCase="'cadastro'">
+      <app-cadastro-estagiario></app-cadastro-estagiario>
+    </div>
+    <div *ngSwitchCase="'lista'">
+      <app-lista-estagiario></app-lista-estagiario>
+        <!--<table>
+            <thead>
+              <th>Matricula</th>
+              <th>Nome</th>
+            </thead>
+            <tbody>
+              <tr *ngFor="let item of estagiarios">
+                <td>{{item.matricula}}</td>
+                <td>{{item.nomeCompleto}}</td>
+              </tr>
+            </tbody>
+          </table>
+        -->
+    </div>
+    <div *ngSwitchCase="'horario'">
+      NESSA ABA TAMBÉM DEVERIA APARECER O HORÁRIO
+    </div>
+  </div>
