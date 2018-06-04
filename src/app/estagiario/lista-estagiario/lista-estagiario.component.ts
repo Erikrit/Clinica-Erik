@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { EstagiarioService } from '../../service/estagiario.service';
-import { Estagiario } from '../../model/estagiario.model';
+import { EstagiarioService } from '../service/estagiario.service';
+import { Estagiario } from '../model/estagiario.model';
 
 @Component({
   selector: 'app-lista-estagiario',

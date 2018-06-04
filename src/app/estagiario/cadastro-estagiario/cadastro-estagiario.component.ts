@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewEncapsulation, ViewChild } from '@angular/core';
-import { Estagiario } from '../../model/estagiario.model';
+import { Estagiario } from '../model/estagiario.model';
 import { FormBuilder, FormGroup, FormControl, FormGroupDirective, Validators } from '@angular/forms'; //1º Importar
-import { EstagiarioService } from '../../service/estagiario.service';
+import { EstagiarioService } from '../service/estagiario.service';
 
 @Component({
   selector: 'app-cadastro-estagiario',
