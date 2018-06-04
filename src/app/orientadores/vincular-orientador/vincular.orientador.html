@@ -1,0 +1,112 @@
+<div class="container">
+    <div class="card">
+      <div class="card-header">
+       Orientador
+      </div>
+      <div class="card-body">
+        <form [formGroup]="formulario"
+             (ngSubmit)="onSubmit()">
+          <div class="container">
+            <div class="row">
+              <div class="col-sm-4">
+                <div class="form-group">
+                  <label for="matriculaInput">Matrícula</label>
+                  <input type="text"
+                         class="form-control"
+                         id="matriculaInput"
+                         placeholder="Matrícula"
+                         formControlName="matricula">
+                </div>
+              </div>
+              <div class="col-sm-8">
+                <div class="form-group">
+                  <label for="nomeCompletoInput">Nome Completo</label>
+                  <input type="text"
+                         class="form-control"
+                         id="nomeCompletoInput"
+                         placeholder="Nome Completo"
+                         formControlName="nomeCompleto">
+                </div>
+              </div>
+            </div>
+            </div>
+        </form>
+        </div>
+        </div>
+        </div>
+
+            <div class="container">
+                <div class="card">
+                    <div class="card-header">
+                     Estagiário
+                    </div>
+
+
+            <div class="row">
+              <div class="col-sm-4">
+                <div class="form-group">
+                  <label for="matriculaInput">Matrícula</label>
+                  <input type="text"
+                         class="form-control"
+                         id="matriculaInput"
+                         placeholder="Matrícula"
+                         formControlName="matricula">
+                </div>
+              </div>
+              <div class="col-sm-8">
+                <div class="form-group">
+                  <label for="nomeCompletoInput">Nome Completo</label>
+                  <input type="text"
+                         class="form-control"
+                         id="nomeCompletoInput"
+                         placeholder="Nome Completo"
+                         formControlName="nomeCompleto">
+                </div>
+                </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-3">
+                <div class="form-group">
+                  <label for="nomeCompletoInput">DATA INICIO</label>
+                  <input type="text"
+                         class="form-control"
+                         id="nomeCompletoInput"
+                         placeholder="Nome Completo"
+                         formControlName="nomeCompleto">
+              </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="form-group">
+                  <label for="nomeCompletoInput">DATA FIM</label>
+                  <input type="text"
+                         class="form-control"
+                         id="nomeCompletoInput"
+                         placeholder="Nome Completo"
+                         formControlName="nomeCompleto">
+                </div>
+                </div>
+                <div class="col-sm-4">
+                    <button type="button"
+                            class="btn btn-primary">Adicionar</button>
+                    <button type="submit"
+                            class="btn btn-success"  >Cancelar</button>
+                   
+                </div>
+              </div>
+            </div>
+            </div>
+            
+         
+            <div class="row ">
+              <div class="col-sm-4 offset-sm-8">
+                <button type="button"
+                        class="btn btn-primary">Editar</button>
+                <button type="submit"
+                        class="btn btn-success" [disabled]="!formulario.valid" >Salvar</button>
+                <button type="button"
+                        class="btn btn-danger">Cancelar</button>
+              </div>
+            </div>
+          
+       
+   
