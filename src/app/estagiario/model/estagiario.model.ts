@@ -1,7 +1,7 @@
 export class Estagiario {
     public matricula: string;
     public nomeCompleto: string;
-    public telefoneResidencial: string;
+    public telefone: string;
     public celular: string;
     public email: string;
     public turno: string;

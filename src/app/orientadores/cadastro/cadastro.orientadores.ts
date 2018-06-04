@@ -29,14 +29,13 @@ export class CadastroOrientadores implements OnInit {
       nomeCompleto: [''],
       telefone: [null],
       celular: [null],
-      email: [null, Validators.email],
-      turno:[null],
-      periodo: [null],
-      tipoEstagio: [null],
+      email: [null],
+      titulacao:[null],
+      abordagem: [null],
     }); 
   }
 
-  gravarEstagiario(): void {
+  gravarOrientadord(): void {
     //    this.estagiarioService.gravarEstagiario(this.estagiario)
     //      .subscribe(msg => {
     //        console.log('gravado com sucesso');
@@ -44,5 +43,17 @@ export class CadastroOrientadores implements OnInit {
         console.log(this.formulario.value);
       }
 
+      onSubmit():void{
+        this.orientador = {
+          ...this.formulario.value
+        }
+     this.serviceOrientador.gravarOrientador(this.orientador)
+      .subscribe( () =>{
+        console.log('Gravado com sucesso');
+      } , () => {
+        console.log('Falhou!');
+      });
+    }
+  }
+  
 
-}

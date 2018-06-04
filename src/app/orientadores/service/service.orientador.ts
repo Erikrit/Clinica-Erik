@@ -7,7 +7,10 @@ import { catchError, tap } from 'rxjs/operators';
 @Injectable()
 export class OrientadorService {
 
-  private url: string = 'http://localhost:8080/api/estagiario'
+  static gravarOrientador(arg0: any): any {
+    throw new Error("Method not implemented.");
+  }
+  private url: string = 'http://localhost:8080/api/orientador'
   
 
   constructor(
@@ -15,12 +18,12 @@ export class OrientadorService {
   ) { }
 
   //gravando os dados no servidor
-  gravarEstagiario(estagiario: Orientador): Observable<Orientador> {
-    return this.httpClient.post<Orientador>(this.url, estagiario);
+  gravarOrientador(orientador: Orientador): Observable<Orientador> {
+    return this.httpClient.post<Orientador>(this.url, orientador);
   }
 
   //recuperando os dados do servidor
-  getListaEstagiarios(): Observable<Orientador[]> {
+  getListaOrientador(): Observable<Orientador[]> {
     return this.httpClient.get<Orientador[]>(this.url);
   }
 

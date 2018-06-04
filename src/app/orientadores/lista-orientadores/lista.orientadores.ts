@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Orientador } from '../model/model.orientadores';
+import { OrientadorService } from '../service/service.orientador';
 
 @Component({
   selector: 'app-lista-orientadores',
@@ -7,10 +9,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListaOrientadores implements OnInit {
 
+  public orientadores :Orientador [];
   
-  constructor() { }
+  constructor(
+    private  orientadorService: OrientadorService
+  ) { }
 
   ngOnInit() {
+    this.orientadorService.getListaOrientador().subscribe((orientadorServices) => {
+      this.orientadores = orientadorServices;
+      console.log('Sucesso!');
+    },() => {
+      console.log('Erro!');
+    })
   }
 
 }

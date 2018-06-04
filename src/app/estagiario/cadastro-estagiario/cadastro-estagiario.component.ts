@@ -49,10 +49,6 @@ export class CadastroEstagiarioComponent implements OnInit {
     this.estagiario.nomeCompleto = event.target.value;
   }
 
-  setTelefone(event: any): void {
-    this.estagiario.telefoneResidencial = event.target.value;
-  }
-
   setCelular(event: any): void {
     this.estagiario.celular = event.target.value;
  //   this.formulario.controls.celular.setValue(event.target.value, {emitEvent: false} )
