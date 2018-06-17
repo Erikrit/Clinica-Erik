@@ -1,7 +1,7 @@
 <div class="container">
     <div class="card">
       <div class="card-header">
-        Cadastro de Estagiário
+        Cadastro de Orientador
       </div>
       <div class="card-body">
         <form [formGroup]="formulario"
@@ -15,7 +15,7 @@
                          class="form-control"
                          id="matriculaInput"
                          placeholder="Matrícula"
-                         formControlName="matricula">
+                         formControlName="matriculaOrientador">
                 </div>
               </div>
               <div class="col-sm-8">
@@ -25,7 +25,7 @@
                          class="form-control"
                          id="nomeCompletoInput"
                          placeholder="Nome Completo"
-                         formControlName="nomeCompleto">
+                         formControlName="nomeOrientador">
                 </div>
               </div>
             </div>
@@ -47,7 +47,8 @@
                   <input type="text"
                          class="form-control"
                          id="celular"
-                         formControlName="celular">
+                         formControlName="celular"
+                         placeholder="Celular">
                 </div>
               </div>
               <div class="col-sm-6">
@@ -56,6 +57,7 @@
                   <input type="text"
                          class="form-control"
                          id="email"
+                         placeholder="E-mail"
                          formControlName="email">
                 </div>
               </div>
@@ -66,7 +68,10 @@
                   <label for="titulacao">TITULALAÇAO</label>
                   <select id="titulacao"
                           class="form-control"
+                          placeholder="TITULALAÇAO"
                           formControlName="titulacao">
+                          <option >Mestre</option>
+                          <option>Doutor</option>
                </select>
                </div>
                </div>
@@ -76,6 +81,7 @@
                     <input type="text"
                     class="form-control"
                     id="abordagem"
+                    placeholder="ABORDAGEM"
                     formControlName="abordagem">
                    </div>
                </div>

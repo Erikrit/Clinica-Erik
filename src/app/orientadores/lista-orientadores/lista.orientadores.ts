@@ -24,4 +24,17 @@ export class ListaOrientadores implements OnInit {
     })
   }
 
+  excluir(id: number) {
+    this.orientadorService.excluir(id).subscribe( () => {
+      console.log('Item excluído com sucesso');
+      this.orientadorService.getListaOrientador().subscribe((itens: Orientador[]) => {
+        this.orientadores = itens;
+      })
+    }, () => {
+      console.log('Não foi possível excluir o item');
+    })
+  }
+editar(){
+  
+}
 }

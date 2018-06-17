@@ -97,6 +97,10 @@ export class CadastroEstagiarioComponent implements OnInit {
                                 console.log('Falhou!');
                               });
     }
+   
+      this.formulario.reset();
+    
+  
   }
 
 

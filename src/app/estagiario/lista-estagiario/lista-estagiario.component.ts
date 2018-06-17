@@ -25,4 +25,14 @@ export class ListaEstagiarioComponent implements OnInit {
     })
   }
 
+  excluir(id: number) {
+    this.estagiarioService.excluir(id).subscribe( () => {
+      console.log('Item excluído com sucesso');
+      this.estagiarioService.getListaEstagiarios().subscribe((itens: Estagiario[]) => {
+        this.estagiarios = itens;
+      })
+    }, () => {
+      console.log('Não foi possível excluir o item');
+    })
+  }
 }

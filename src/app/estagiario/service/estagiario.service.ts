@@ -24,6 +24,10 @@ export class EstagiarioService {
     return this.httpClient.get<Estagiario[]>(this.url);
   }
 
+  public excluir(id: number): Observable<Estagiario> {
+    return this.httpClient.delete<Estagiario>(this.url+'/'+id);
+  }
+
 
 
 }

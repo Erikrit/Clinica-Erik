@@ -2,14 +2,14 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, FormControl, FormGroupDirective, Validators } from '@angular/forms'; 
 import { OrientadorService } from '../service/service.orientador';
 import { Orientador } from '../model/model.orientadores';
+
 @Component({
   selector: 'app-cadastro-orientadores',
   templateUrl: './cadastro.orientadores.html',
   styleUrls: ['./cadastro.orientadores.css']
 })
 export class CadastroOrientadores implements OnInit {
-  @ViewChild(FormGroupDirective)
-  
+
   form: FormGroupDirective;
   //2º Passo
   formulario: FormGroup;
@@ -25,14 +25,15 @@ export class CadastroOrientadores implements OnInit {
 
   ngOnInit() {
     this.formulario = this.formBuilder.group({
-      matricula: ['', Validators.required],
-      nomeCompleto: [''],
+      matriculaOrientador: ['', Validators.required],
+      nomeOrientador: [''],
       telefone: [null],
       celular: [null],
       email: [null],
       titulacao:[null],
       abordagem: [null],
     }); 
+    
   }
 
   gravarOrientadord(): void {
@@ -53,6 +54,7 @@ export class CadastroOrientadores implements OnInit {
       } , () => {
         console.log('Falhou!');
       });
+      this.formulario.reset();
     }
   }
   

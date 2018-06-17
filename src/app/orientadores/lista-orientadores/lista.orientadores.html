@@ -22,7 +22,7 @@
                 </div>
                   </div>
 
-                  <div class="col align-self-end">
+                  <div class="col-sm-4">
                       <button type="button"
                               class="btn btn-primary">Buscar</button>
                   </div>
@@ -44,11 +44,12 @@
                         </thead>
                         <tbody>
                           <tr *ngFor="let item of orientadores">
-                            <td>{{item.matricula}}</td>
-                            <td>{{item.nomeCompleto}}</td>
+                            <td>{{item.matriculaOrientador}}</td>
+                            <td>{{item.nomeOrientador}}</td>
                             <td>Neuropsicologia</td>
                             <td>Ativo</td>
-                            <td>visualizar editar excluir</td>
+                            <td><a href (click)="excluir(item.id)">excluir</a> | <a href (click)="editar()">editar</a>
+                              </td>
                           </tr>
                         </tbody>
                       </table>

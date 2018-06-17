@@ -2,46 +2,55 @@
 
 
 <div class="container">
+    <form [formGroup]="formulario"
+    (ngSubmit)="salvarVinculoTs()">
     <div class="card">
       <div class="card-header">
        Orientador
       </div>
-      <div class="card-body">
-        <form [formGroup]="formulario"
-             (ngSubmit)="onSubmit()">
-          <div class="container">
+      
+        
+        <div class="card-body">
             <div class="row">
               <div class="col-sm-4">
                 <div class="form-group">
                   <label for="matriculaInput">Matrícula</label>
-                  <input type="text"
+                  <select  type="text"
                          class="form-control"
                          id="matriculaInput"
                          placeholder="Matrícula"
-                         formControlName="matricula">
+                         formControlName="matriculaOrientadorV"
+                         >
+                        <option *ngFor="let item1 of orientador ">
+                            {{item1.matriculaOrientador}}
+                        </option>
+                      </select>
                 </div>
               </div>
               <div class="col-sm-8">
                 <div class="form-group">
                   <label for="nomeCompletoInput">Nome Completo</label>
-                  <input type="text"
+                  <select  type="text"
                          class="form-control"
                          id="nomeCompletoInput"
                          placeholder="Nome Completo"
-                         formControlName="nomeCompleto">
+                         formControlName="nomeCompletoOrientador"
+                         
+                         >
+                          <option *ngFor="let item4 of orientador " >
+                              {{item4.nomeOrientador}}
+                          </option>
+                         </select>
                 </div>
               </div>
             </div>
             </div>
-        </form>
+        
         </div>
-        </div>
-        </div>
+        
 
 <br>
-          
-            <div class="container">
-                
+         
                 <div class="card">
                     <div class="card-header">
                      Estagiário
@@ -49,24 +58,37 @@
 
                     <div class="card-body">
             <div class="row">
-              <div class="col-sm-3">
+              <div class="col-sm-4">
                 <div class="form-group">
                   <label for="matriculaInput">Matrícula</label>
-                  <input type="text"
+                  <select  type="text"
                          class="form-control"
                          id="matriculaInput"
                          placeholder="Matrícula"
-                         formControlName="matricula">
+                         formControlName="matricula"
+                         >
+                         <option *ngFor="let item2 of estagiario " >
+                            {{item2.matricula}}
+                         </option>
+                         </select>
                 </div>
               </div>
-              <div class="col-sm-7">
+              <div class="col-sm-8">
                 <div class="form-group">
                   <label for="nomeCompletoInput">Nome Completo</label>
-                  <input type="text"
+                  <select  type="text"
                          class="form-control"
                          id="nomeCompletoInput"
                          placeholder="Nome Completo"
-                         formControlName="nomeCompleto">
+                         formControlName="nomeCompleto"
+                         
+                         >
+                        <option *ngFor="let item2 of estagiario">
+
+                          {{item2.nomeCompleto}}
+                            
+                        </option>
+                        </select>
                 </div>
                 </div>
                 </div>
@@ -78,7 +100,7 @@
                          class="form-control"
                          id="dataInicialInput"
                          placeholder="Data inicial"
-                         formControlName="dataInicial">
+                         formControlName="dataI">
               </div>
             </div>
             <div class="col-sm-3">
@@ -88,14 +110,14 @@
                          class="form-control"
                          id="dataFinalInput"
                          placeholder="Data FInal"
-                         formControlName="dataFinalInput">
+                         formControlName="dataF">
                 </div>
                 </div>
                 
                 <div class="col-sm-4 ">
                     <button type="button"
                       
-                            class="btn btn-primary">Adicionar</button>
+                            class="btn btn-primary" (click)="salvarVinculoTs()">Adicionar</button>
 
                     <button type="submit"
                             class="btn btn-success"  >Cancelar</button>
@@ -104,29 +126,36 @@
                 
               </div>
             </div>
+            </form>
             </div>
+          
          
-            
+         
           <br>
 
 
-          <div class="container">
+          <div class="container"></div>
               <div class="card">
                   <div class="card-body">
               <div class="table-responsive" >
                   <table class="table table-striped table-bordered table-hover table-condensed table table-condensed">
                     <thead> 
                     <tr>
-                      <th>Matricula</th>
+                        <th>Matricula Orientador</th>
+                      <th>Matricula Estagiário</th>
                       <th>Nome Completo</th>
                       <th>Açao</th>
                     </tr>
                     </thead>
                     <tbody>
-                      <tr *ngFor="let item of estagiarios">
-                        <td>{{item.matricula}}</td>
-                        <td>{{item.nomeCompleto}}</td>
-                        <td>visualizar editar excluir</td>
+                      <tr *ngFor="let item3 of orientadorM ">
+                        <td>{{matricula}}</td>
+                        <td>{{item3.matricula}}</td>
+                        <td>{{item3.nomeCompleto}}</td>
+                        <td>
+                          <a routerLink="/vincular-orientador" 
+                            (click)="excluir(item5.id)"></a> 
+                        </td>
                       </tr>
                     </tbody>
                   </table>
